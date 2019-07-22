@@ -6,6 +6,8 @@ target/
 mvnw
 mvnw.cmd
 .mvn
+gitignore
+
 
 ### STS ###
 .apt_generated
