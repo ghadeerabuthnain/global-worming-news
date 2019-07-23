@@ -1,17 +1,11 @@
 package com.slitherine.gw.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Set;
 
-/**
- * Created by LAMA ALOSAIMI on 7/22/19 at 8:26 PM.
- */
 @Entity
-@Table(name = "post")
-public class post {
+@Table(name = "comment")
+public class comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +15,9 @@ public class post {
 
     public LocalDateTime createdDate;
 
-    @OneToMany(mappedBy="postId")
-    private Set<comment> comments;
-
+    @ManyToOne
+    @JoinColumn(name="postId", nullable=false)
+    public post postId;
 
     public String getText() {
         return text;
