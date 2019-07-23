@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Pageable;
 import java.lang.reflect.Method;
+import java.util.List;
 
 @RestController
 @RequestMapping("/comment/")
@@ -26,14 +27,14 @@ public class commentController {
 
 //    delete comment
     @RequestMapping(method = RequestMethod.DELETE, path = "{id}")
-    public void deleteComment(@PathVariable int id){
+    public void deleteComment(@PathVariable (value = "id") int id){
         service.deleteComment(id);
     }
 
 //    get a post comments
     @RequestMapping(method=RequestMethod.GET, path = "{postId}/comments")
-    public Page<comment> getComments(@PathVariable (value = "postId") int postId,
-                                                Pageable pageable) {
+    public List<comment> getComments(@PathVariable (value = "postId") int postId,
+                                     Pageable pageable) {
         return service.getComments(postId, pageable);
     }
 }

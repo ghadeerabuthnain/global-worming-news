@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.awt.print.Pageable;
+import java.util.List;
 
 @Service
 public class commentService {
@@ -27,7 +28,7 @@ public class commentService {
     }
 
 //    get a post comments
-    public Page<comment> getComments(int postId, Pageable pageable)
+    public List<comment> getComments(int postId, Pageable pageable)
     {
         return repository.findByPostId(postId, pageable);
     }
