@@ -28,7 +28,7 @@ public class commentService {
     }
 
 //    get a post comments
-    public List<comment> getComments(int postId, Pageable pageable)
+    public Page<comment> getComments(int postId, Pageable pageable)
     {
         return repository.findByPostId(postId, pageable);
     }

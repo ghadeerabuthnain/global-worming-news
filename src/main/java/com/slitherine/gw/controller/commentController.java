@@ -33,7 +33,7 @@ public class commentController {
 
 //    get a post comments
     @RequestMapping(method=RequestMethod.GET, path = "{postId}/comments")
-    public List<comment> getComments(@PathVariable (value = "postId") int postId,
+    public Page<comment> getComments(@PathVariable (value = "postId") int postId,
                                      Pageable pageable) {
         return service.getComments(postId, pageable);
     }

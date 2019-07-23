@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @Repository
-public interface commentRepository extends CrudRepository<comment, Integer> {
+public interface commentRepository extends JpaRepository<comment, Integer> {
 
-    List<comment> findByPostId(int postId, Pageable pageable);
+    Page<comment> findByPostId(int postId, Pageable pageable);
 }
