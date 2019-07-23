@@ -4,10 +4,8 @@ import com.slitherine.gw.model.comment;
 import com.slitherine.gw.repository.commentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Pageable;
-import java.util.List;
 
 @Service
 public class commentService {
@@ -30,7 +28,10 @@ public class commentService {
 //    get a post comments
     public Page<comment> getComments(int postId, Pageable pageable)
     {
+//        return repository.findByPostId(postId, pageable);
         return repository.findByPostId(postId, pageable);
+
     }
+
 
 }
