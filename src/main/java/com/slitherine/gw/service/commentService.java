@@ -3,7 +3,10 @@ package com.slitherine.gw.service;
 import com.slitherine.gw.model.comment;
 import com.slitherine.gw.repository.commentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+
+import java.awt.print.Pageable;
 
 @Service
 public class commentService {
@@ -22,4 +25,11 @@ public class commentService {
     {
         repository.deleteById(id);
     }
+
+//    get a post comments
+    public Page<comment> getComments(int postId, Pageable pageable)
+    {
+        return repository.findByPostId(postId, pageable);
+    }
+
 }
