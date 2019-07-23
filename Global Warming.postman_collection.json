@@ -17,7 +17,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"text\": \"hello world\"\n\t\n}"
+					"raw": "{\n\t\"text\": \"first post\"\n\t\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/post/",
@@ -62,15 +62,66 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:8080/post/1",
+					"raw": "http://localhost:8080/comment/1/comments",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"post",
-						"1"
+						"comment",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/comment/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"comment the first post\",\n\t\"postId\": {\n\t\t\"id\": 1\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/comment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/comment/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/comment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						""
 					]
 				}
 			},

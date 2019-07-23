@@ -7,6 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class commentService {
     @Autowired
@@ -26,11 +29,23 @@ public class commentService {
     }
 
 //    get a post comments
-    public Page<comment> getComments(int postId, Pageable pageable)
+    public Page<comment> getPostComments(int postId, Pageable pageable)
     {
 //        return repository.findByPostId(postId, pageable);
         return repository.findByPostId(postId, pageable);
 
+    }
+
+//    get all comments
+    public List<comment> getAllComments()
+    {
+        return repository.findAll();
+    }
+
+//    get comment by id
+    public Optional<comment> getCommentById(int id)
+    {
+        return repository.findById(id);
     }
 
 
