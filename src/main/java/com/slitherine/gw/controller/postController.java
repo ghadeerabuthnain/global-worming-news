@@ -1,8 +1,11 @@
 package com.slitherine.gw.controller;
 
+import com.slitherine.gw.model.comment;
 import com.slitherine.gw.model.post;
 import com.slitherine.gw.service.postService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

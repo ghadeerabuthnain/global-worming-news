@@ -17,7 +17,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"text\": \"first post\"\n\t\n}"
+					"raw": "{\n\t\"text\": \"first post\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/post/",
@@ -62,16 +62,15 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:8080/comment/1/comments",
+					"raw": "http://localhost:8080/post/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"comment",
-						"1",
-						"comments"
+						"post",
+						"1"
 					]
 				}
 			},
@@ -89,7 +88,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"text\": \"comment the first post\",\n\t\"postId\": {\n\t\t\"id\": 1\n\t}\n}"
+					"raw": "{\n\t\"text\": \"comment the first post\",\n\t\"postId\": 1\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/comment/",
@@ -124,6 +123,29 @@
 						""
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/comment/1/comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/comment/1/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comment",
+						"1",
+						"comments"
+					]
+				},
+				"description": "get a post comments"
 			},
 			"response": []
 		}

@@ -15,7 +15,7 @@ public class post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    public Integer id;
 
     public String text;
 

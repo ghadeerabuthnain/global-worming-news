@@ -18,18 +18,15 @@ public class postService {
     @Autowired
     public postRepository repository;
 
-//    get all posts
     public List<post> getAllpost()
     {
         return repository.findAll();
     }
 
-//    get single post
     public Optional<post> getPostById(int id) {
         return repository.findById(id);
     }
 
-//    add new post
     public  post addPost(post newPost) {
         newPost.createdDate = java.time.LocalDateTime.now();
             return repository.save(newPost);
