@@ -1,28 +1,42 @@
 package com.slitherine.gw.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by LAMA ALOSAIMI on 7/22/19 at 8:26 PM.
  */
 @Entity
 @Table(name = "post")
-public class post {
+public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer id;
+    private Integer id;
 
-    public String text;
+    private String text;
 
-    public LocalDateTime createdDate;
-
+    private LocalDateTime createdDate;
+    
     @OneToMany(mappedBy="postId")
-    private Set<comment> comments;
+    private List<Comment> comments;
+
+    public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 
 
     public String getText() {

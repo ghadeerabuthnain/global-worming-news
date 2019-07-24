@@ -1,7 +1,7 @@
 package com.slitherine.gw.controller;
 
-import com.slitherine.gw.model.post;
-import com.slitherine.gw.service.postService;
+import com.slitherine.gw.model.Post;
+import com.slitherine.gw.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -14,24 +14,24 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/post/")
-public class postController {
+public class PostController {
 
     @Autowired
-    public postService service;
+    public PostService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<post> getAllPost(){
-        return service.getAllpost();
+    public List<Post> getAllPost(){
+        return service.getAllPosts();
     }
 
     @RequestMapping(path = "{id}", method = RequestMethod.GET)
-    public Optional<post> getPostById(@PathVariable int id)
+    public Optional<Post> getPostById(@PathVariable int id)
     {
         return service.getPostById(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public post addPost(@RequestBody post newPost){
+    public Post addPost(@RequestBody Post newPost){
         return service.addPost(newPost);
     }
 

@@ -2,6 +2,13 @@
 a java spring api where you can post and comment about global worming
 
 
+[![HitCount](http://hits.dwyl.io/lamoboos223/global-worming-news.svg)](http://hits.dwyl.io/lamoboos223/global-worming-news)
+[![Join the chat at https://gitter.im/slitherine/global-warming-spring-boot-api](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/slitherine/global-warming-spring-boot-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/lamoboos223/global-worming-news/issues)
+
+
+
+
 ## Class Diagram
 ![](https://github.com/lamoboos223/global-worming-news/blob/master/Untitled.jpg)
 

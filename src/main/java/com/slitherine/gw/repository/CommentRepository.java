@@ -1,6 +1,6 @@
 package com.slitherine.gw.repository;
 
-import com.slitherine.gw.model.comment;
+import com.slitherine.gw.model.Comment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,8 +10,7 @@ import java.util.List;
 
 
 @Repository
-public interface commentRepository extends JpaRepository<comment, Integer> {
+public interface CommentRepository extends JpaRepository<Comment, Integer> {
 
-    public Page<comment> findByPostId(int postId, Pageable pageable);
-//    List<comment> findByPostId(int postId);
+    public Page<Comment> findByPostId(int postId, Pageable pageable);
 }
