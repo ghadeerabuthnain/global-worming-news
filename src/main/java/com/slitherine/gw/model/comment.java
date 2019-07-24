@@ -15,9 +15,9 @@ public class comment {
 
     public LocalDateTime createdDate;
 
-    @ManyToOne
-    @JoinColumn(name="postId", nullable=false)
-    public post postId;
+//    @ManyToOne
+//    @JoinColumn(name="postId", nullable=false)
+    public Integer postId;
 
     public String getText() {
         return text;
